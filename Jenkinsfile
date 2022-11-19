@@ -8,6 +8,9 @@ pipeline {
             }
          }
          steps {
+             sh 'pip3 install matplotlib'
+             sh 'pip3 install numpy'
+             sh 'pip3 install tikzplotlib'
              sh 'python3 figure.py'
          }
       }
