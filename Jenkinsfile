@@ -8,12 +8,10 @@ pipeline {
             }
          }
          steps {
-               withEnv(["HOME=${env.WORKSPACE}"]) {
-                  sh 'pip3 install matplotlib --user'
-                  sh 'pip3 install numpy --user'
-                  sh 'pip3 install tikzplotlib --user'
+                  sh 'python -m pip install matplotlib'
+                  sh 'python -m pip install numpy'
+                  sh 'python -m pip install tikzplotlib'
                   sh 'python3 figure.py'
-               }
          }
       }
    }
