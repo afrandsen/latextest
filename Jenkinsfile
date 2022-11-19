@@ -4,21 +4,11 @@ pipeline {
       stage('Build1') {
          agent {
             docker {
-               image 'python:3.10.7-alpine'
+               image 'python:3.11.0-alpine'
             }
          }
          steps {
              sh 'python3 figure.py'
-         }
-      }
-      stage('Build2') {
-         agent {
-            docker {
-               image 'blang/latex:ubuntu'
-            }
-         }
-         steps {
-             sh 'xelatex sample.tex'
          }
       }
    }

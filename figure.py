@@ -12,4 +12,4 @@ ax.set(xlabel='Time [s]', ylabel='Voltage [mV]',
        title='About as simple as it gets, folks')
 
 import tikzplotlib
-tikzplotlib.save("figure.pgf")
+tikzplotlib.save("figure.pgf") 
