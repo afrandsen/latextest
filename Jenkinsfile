@@ -8,10 +8,12 @@ pipeline {
             }
          }
          steps {
-             sh 'pip3 install --target ${env.WORKSPACE} matplotlib'
-             sh 'pip3 install --target ${env.WORKSPACE} numpy'
-             sh 'pip3 install --target ${env.WORKSPACE} tikzplotlib'
-             sh 'python3 figure.py'
+               withEnv(["HOME=${env.WORKSPACE}"]) {
+                  sh 'pip3 install matplotlib'
+                  sh 'pip3 install numpy'
+                  sh 'pip3 install tikzplotlib'
+               }
+               sh 'python3 figure.py'
          }
       }
    }
